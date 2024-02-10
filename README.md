@@ -1,1 +1,3 @@
 # sanity-cms
+
+Vrådal panorama 
