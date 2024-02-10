@@ -5,12 +5,11 @@ import {visionTool} from '@sanity/vision'
 /* plugins */
 import {media} from 'sanity-plugin-media'
 import {simplerColorInput} from 'sanity-plugin-simpler-color-input'
-import { iconPicker } from 'sanity-plugin-icon-picker';
+import {iconPicker} from 'sanity-plugin-icon-picker'
 
 /* project fiels */
 import {structure} from './structure'
 import {schemaTypes} from './schemas'
-
 
 export default defineConfig({
   name: 'default',
@@ -20,20 +19,17 @@ export default defineConfig({
   dataset: 'production',
 
   plugins: [
-    structureTool({structure}), 
+    structureTool({structure}),
     visionTool(),
-    simplerColorInput(
-      {
-        defaultColorFormat: 'rgba',
-        enableSearch: true,
-      }
-    ),
+    simplerColorInput({
+      defaultColorFormat: 'rgba',
+      enableSearch: true,
+    }),
     iconPicker(),
     media(),
   ],
 
   schema: {
-    
     types: schemaTypes,
   },
 })

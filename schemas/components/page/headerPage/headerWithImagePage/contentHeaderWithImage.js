@@ -60,8 +60,7 @@ export default {
           type: 'iconPicker',
           title: 'Search and select icon',
           options: {
-            showName: true,
-            collapsible: false,
+            storeSvg: true,
           },
         },
         {
