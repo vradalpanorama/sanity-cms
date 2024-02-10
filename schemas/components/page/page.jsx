@@ -1,5 +1,5 @@
 import React from 'react'
-import {Icon} from '@iconify/react'
+import SVG from 'react-inlinesvg';
 import {RiPagesLine} from 'react-icons/ri'
 // import {PagePreview} from './pagePreview'
 
@@ -41,7 +41,7 @@ export default {
       return {
         title: title,
         subtitle: `${sectionSlug ? '/' + sectionSlug : ''}/${slug}`,
-        media: isLandingPage ? RiPagesLine : <Icon icon={sectionIcon.name} />,
+        media: isLandingPage ? RiPagesLine : <SVG src={sectionIcon.svg} />,
       }
     },
   },

@@ -1,5 +1,5 @@
 import React from 'react'
-import {Icon} from '@iconify/react'
+import SVG from 'react-inlinesvg';
 import {slugify} from 'transliteration'
 import {TbMenuDeep} from 'react-icons/tb'
 
@@ -14,9 +14,8 @@ export default {
       type: 'iconPicker',
       title: 'Search and select icon',
       options: {
-        showName: true,
-        collapsible: false,
-      },
+        storeSvg: true
+    }
     },
     {
       name: 'title',
@@ -56,12 +55,12 @@ export default {
   preview: {
     select: {
       title: 'title.en',
-      media: 'icon',
+      icon: 'icon',
     },
-    prepare({title, media}) {
+    prepare({title, icon}) {
       return {
         title: title,
-        media: <Icon icon={media.name} />,
+        media: <SVG src={icon.svg} />,
       }
     },
   },
