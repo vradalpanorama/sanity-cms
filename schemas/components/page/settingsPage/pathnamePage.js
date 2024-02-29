@@ -1,29 +1,25 @@
 import {slugify} from 'transliteration'
 
-const shouldShowSection = (document) => document.settings?.pathname?.isLandingPage;
-
 export default {
   name: 'pathnamePage',
   title: 'Pathname',
   type: 'object',
-  options: {
-    
-  },
+  options: {},
   fields: [
     {
-      name: 'isLandingPage',
-      title: 'Is Landing Page?',
+      name: 'isSectionPage',
+      title: 'Is Section Page?',
       type: 'boolean',
-      initialValue: true,
+      initialValue: false,
     },
     {
       name: 'section',
       title: 'Section',
       type: 'reference',
-      hidden: ({document}) => shouldShowSection(document),
+      hidden: ({document}) => !document.settings?.pathname?.isSectionPage,
       validation: (Rule) =>
         Rule.custom((sectionValue, {document}) =>
-        !shouldShowSection(document) && sectionValue === undefined
+          document.settings?.pathname?.isSectionPage && sectionValue === undefined
             ? 'You need to select a section!'
             : true,
         ),

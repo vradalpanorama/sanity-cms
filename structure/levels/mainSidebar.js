@@ -1,5 +1,7 @@
+import {IoSettingsOutline} from 'react-icons/io5'
 // import {TbSettings, TbMenuDeep, TbNews, TbDeviceIpadHorizontal} from 'react-icons/tb'
-// import {RiHome3Line} from 'react-icons/ri'
+import { MdOutlineMap } from "react-icons/md";
+import {RiHome3Line} from 'react-icons/ri'
 // import {LuAlignVerticalSpaceAround} from 'react-icons/lu'
 
 // import pagesSidebar from './pagesSidebar'
@@ -39,14 +41,23 @@ const mainSidebar = (S) => [
   //   .title('Pages')
   //   .icon(TbMenuDeep)
   //   .child(S.list().title('Pages alpin.no').items(pagesSidebar(S))),
-
+  S.listItem()
+    .title('Main Page')
+    .icon(RiHome3Line)
+    .child(S.document().schemaType('mainPage').documentId('mainPage')),
+  ...S.documentTypeListItems().filter((listItem) => ['news'].includes(listItem.getId())),
+  S.divider(),
+  ...S.documentTypeListItems().filter((listItem) => ['modal'].includes(listItem.getId())),
   ...S.documentTypeListItems().filter((listItem) => ['page'].includes(listItem.getId())),
-
-  // S.divider(),
-  // S.listItem()
-  //   .title('Settings')
-  //   .icon(TbSettings)
-  //   .child(S.list().title('Settings alpin.no').items(settingsSidebar(S))),
+  S.divider(),
+  S.listItem()
+    .title('Map')
+    .icon(MdOutlineMap)
+    .child(S.document().schemaType('map').documentId('map')),
+  S.listItem()
+    .title('Settings')
+    .icon(IoSettingsOutline)
+    .child(S.document().schemaType('siteSettings').documentId('siteSettings')),
 ]
 
 export default mainSidebar
