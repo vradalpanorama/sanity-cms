@@ -19,12 +19,12 @@ export default {
       },
       fields: [
         {
-            name: 'alt',
-            type: 'string',
-            title: 'Alt caption',
-            validation: (Rule) => Rule.required(),
-        }
-      ]
+          name: 'alt',
+          type: 'string',
+          title: 'Alt caption',
+          validation: (Rule) => Rule.required(),
+        },
+      ],
     },
     {
       name: 'layoutSettings',
@@ -35,14 +35,14 @@ export default {
   ],
   preview: {
     select: {
-      alt: 'img.alt',
-      media: 'img'
+      alt: 'image.alt',
+      media: 'image',
     },
     prepare({alt, media}) {
       return {
         title: 'Block Image',
         subtitle: alt,
-        media
+        media,
       }
     },
   },

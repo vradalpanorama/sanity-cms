@@ -1,18 +1,15 @@
-import React from 'react'
-import SVG from 'react-inlinesvg'
 import {RiPagesLine} from 'react-icons/ri'
-// import {PagePreview} from './pagePreview'
 
 export default {
-  name: 'page',
-  title: 'Site pages',
+  name: 'mainPage',
+  title: 'Main Page',
   type: 'document',
   icon: RiPagesLine,
   fields: [
     {
       name: 'settings',
       title: 'Settings',
-      type: 'settingsPage',
+      type: 'settingsMainPage',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -32,26 +29,15 @@ export default {
   preview: {
     select: {
       title: 'settings.namePage.en',
-      isSectionPage: 'settings.pathname.isSectionPage',
+      isLandingPage: 'settings.pathname.isLandingPage',
       sectionSlug: 'settings.pathname.section.slug.current',
       sectionIcon: 'settings.pathname.section.icon',
       slug: 'settings.pathname.slug.current',
     },
-    prepare({title, sectionSlug, slug, sectionIcon, isSectionPage}) {
+    prepare({title, sectionSlug, slug, sectionIcon, isLandingPage}) {
       return {
-        title: title,
-        subtitle: `${sectionSlug ? '/' + sectionSlug : ''}/${slug}`,
-        media: isSectionPage ? <SVG src={sectionIcon.svg} /> : RiPagesLine,
+        title: 'Main Page',
       }
     },
   },
-  orderings: [
-    {
-      title: 'Sections',
-      name: 'sectionsAsc',
-      by: [
-        {field: 'settings.pathname.section.title.en', direction: 'asc'}
-      ]
-    }
-  ]
 }

@@ -12,6 +12,10 @@ export default {
       title: 'Title',
       type: 'object',
       validation: (Rule) => Rule.required(),
+      options: {
+        collapsible: false,
+        columns: 2,
+      },
       fields: [
         {
           name: 'en',
