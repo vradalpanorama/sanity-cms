@@ -9,7 +9,7 @@ export default {
     {
       name: 'settings',
       title: 'Settings',
-      type: 'settingsMainPage',
+      type: 'settingsPage',
       validation: (Rule) => Rule.required(),
     },
     {

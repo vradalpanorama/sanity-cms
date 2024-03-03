@@ -1,5 +1,5 @@
 import React from 'react'
-import SVG from 'react-inlinesvg';
+import SVG from 'react-inlinesvg'
 import {slugify} from 'transliteration'
 import {TbMenuDeep} from 'react-icons/tb'
 
@@ -14,8 +14,8 @@ export default {
       type: 'iconPicker',
       title: 'Search and select icon',
       options: {
-        storeSvg: true
-    }
+        storeSvg: true,
+      },
     },
     {
       name: 'title',
@@ -51,15 +51,32 @@ export default {
         },
       },
     },
+    {
+      name: 'pagesSection',
+      title: 'Pages Section',
+      description: 'The pages that will be in the menu and on the section page',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'page'}],
+        },
+      ],
+    },
   ],
   preview: {
     select: {
       title: 'title.en',
+      pagesSection: 'pagesSection',
       icon: 'icon',
     },
-    prepare({title, icon}) {
+    prepare({title, icon, pagesSection}) {
+      const countPagesSection = pagesSection?.length
       return {
         title: title,
+        subtitle: countPagesSection
+          ? `${countPagesSection} ${countPagesSection > 1 ? 'pages' : 'page'}`
+          : 'No pages',
         media: <SVG src={icon.svg} />,
       }
     },

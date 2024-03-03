@@ -1,14 +1,11 @@
 export default {
   name: 'menuMainNavigation',
-  title: 'Main Navigation',
+  title: 'Main part Navigation',
   type: 'array',
   of: [
     {
-      type: 'menuSectionNavigation',
-    },
-    {
       type: 'reference',
-      to: [{type: 'page'}],
+      to: [{type: 'page'}, {type: 'section'}],
     },
   ],
 }

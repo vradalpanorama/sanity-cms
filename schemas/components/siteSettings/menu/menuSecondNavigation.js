@@ -1,12 +1,6 @@
 export default {
   name: 'menuSecondNavigation',
-  title: 'Main Navigation',
-  type: 'object',
-  fields: [
-    {
-      name: 'secondNavigation',
-      title: 'Second Navigation',
-      type: 'menuSectionNavigation',
-    },
-  ],
+  title: 'Second part Navigation',
+  type: 'reference',
+  to: [{type: 'page'}, {type: 'section'}],
 }
