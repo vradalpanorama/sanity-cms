@@ -11,7 +11,7 @@ export default {
     {
       name: 'secondNavigation',
       title: 'Second Navigation',
-      type: 'menuSectionNavigation',
+      type: 'menuSecondNavigation',
     },
   ],
   

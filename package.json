@@ -8,13 +8,15 @@
     "dev": "sanity dev",
     "start": "sanity start",
     "build": "sanity build",
-    "deploy": "sanity deploy",
-    "deploy-graphql": "sanity graphql deploy"
+    "deploy": "sanity deploy --max-old-space-size=18000",
+    "deploy-graphql": "sanity graphql deploy",
+    "login": "sanity login"
   },
   "keywords": [
     "sanity"
   ],
   "dependencies": {
+    "@sanity/cli": "^3.30.1",
     "@sanity/plugin-kit": "^3.1.10",
     "@sanity/vision": "^3.28.0",
     "react": "^18.2.0",
@@ -22,7 +24,7 @@
     "react-icons": "^5.0.1",
     "react-inlinesvg": "^4.1.1",
     "react-is": "^18.2.0",
-    "sanity": "^3.28.0",
+    "sanity": "^3.30.1",
     "sanity-plugin-icon-picker": "^3.3.0",
     "sanity-plugin-media": "^2.2.5",
     "sanity-plugin-simpler-color-input": "^2.2.0",
