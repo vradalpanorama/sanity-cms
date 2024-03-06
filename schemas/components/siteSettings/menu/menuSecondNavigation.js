@@ -2,5 +2,6 @@ export default {
   name: 'menuSecondNavigation',
   title: 'Second part Navigation',
   type: 'reference',
-  to: [{type: 'page'}, {type: 'section'}],
+  validation: (Rule) => Rule.required(),
+  to: [{type: 'page'}, {type: 'section'}, {type: 'modal'}],
 }

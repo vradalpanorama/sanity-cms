@@ -9,7 +9,29 @@ export default {
     collapsed: false,
   },
   fields: [
-    {name: 'nameModal', title: 'Name Modal', type: 'string', validation: (Rule) => Rule.required()},
+    {
+      name: 'nameModal',
+      title: 'Name Modal',
+      type: 'object',
+      validation: (Rule) => Rule.required(),
+      options: {
+        columns: 2,
+      },
+      fields: [
+        {
+          name: 'en',
+          title: 'EN',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+        {
+          name: 'no',
+          title: 'NO',
+          type: 'string',
+          validation: (Rule) => Rule.required(),
+        },
+      ],
+    },
     {
       name: 'queryParameter',
       title: 'Query Parameter',
@@ -17,7 +39,7 @@ export default {
       validation: (Rule) => Rule.required(),
       options: {
         source: (doc) => {
-          return `${doc.settings.nameModal}`
+          return `${doc.settings.nameModal.en}`
         },
         maxLength: 200,
         slugify: (input) => {
