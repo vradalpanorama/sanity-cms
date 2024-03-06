@@ -21,7 +21,7 @@ export default {
   ],
     preview: {
       select: {
-        title: 'settings.nameModal',
+        title: 'settings.nameModal.en',
         query: 'settings.queryParameter.current',
       },
       prepare({title, query}) {

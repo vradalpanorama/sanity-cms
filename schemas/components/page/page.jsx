@@ -40,7 +40,7 @@ export default {
     prepare({title, sectionSlug, slug, sectionIcon, isSectionPage}) {
       return {
         title: title,
-        subtitle: `${sectionSlug ? '/' + sectionSlug : ''}/${slug}`,
+        subtitle: `${isSectionPage && sectionSlug ? '/' + sectionSlug : ''}/${slug}`,
         media: isSectionPage ? <SVG src={sectionIcon.svg} /> : RiPagesLine,
       }
     },

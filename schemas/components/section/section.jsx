@@ -5,7 +5,7 @@ import {TbMenuDeep} from 'react-icons/tb'
 
 export default {
   name: 'section',
-  title: 'Section',
+  title: 'Sections',
   type: 'document',
   icon: TbMenuDeep,
   fields: [
@@ -59,7 +59,7 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{type: 'page'}],
+          to: [{type: 'page'}, {type: 'modal'}],
         },
       ],
     },
