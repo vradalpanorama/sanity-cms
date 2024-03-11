@@ -8,16 +8,6 @@ export default {
   },
   fields: [
     {
-      name: 'newsSettings',
-      title: 'News Settings',
-      type: 'newsSettings',
-    },
-    {
-      name: 'weatherWidget',
-      title: 'Weather Widget',
-      type: 'weatherWidgetSettings',
-    },
-    {
       name: 'preview',
       title: 'Preview Page',
       type: 'previewPage',

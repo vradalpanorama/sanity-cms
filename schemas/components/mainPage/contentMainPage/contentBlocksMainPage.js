@@ -11,7 +11,7 @@ const textEditorStyles = [
   ]
   
   export default {
-    name: 'contentBlocksPage',
+    name: 'contentBlocksMainPage',
     title: 'Content Blocks',
     type: 'object',
     options: {
@@ -43,6 +43,12 @@ const textEditorStyles = [
           },
           {
             type: 'actionButtonBlock'
+          },
+          {
+            type: 'resortWidgetMainPageBlock',
+          }, 
+          {
+            type: 'newsFeedMainPageBlock'
           }
         ],
       },
