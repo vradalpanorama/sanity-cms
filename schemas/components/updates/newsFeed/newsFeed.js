@@ -6,6 +6,12 @@ export default {
   icon: MdOutlineDynamicFeed,
   fields: [
     {
+      name: 'content',
+      title: 'Content on News Feed',
+      type: 'contentNewsFeed',
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: 'numberOnNewsFeed',
       title: 'The number of news in the feed',
       type: 'string',

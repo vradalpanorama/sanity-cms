@@ -7,39 +7,24 @@ export default {
   icon: MdOutlineDynamicFeed,
   fields: [
     {
-      name: 'title',
-      type: 'string',
-      title: 'Title on News Feed',
-    },
-    {
-      name: 'bottom',
-      title: 'Bottom part',
-      type: 'object',
-      fields: [
-        {
-          name: 'description',
-          type: 'string',
-          title: 'Description button',
-        },
-        {
-          name: 'button',
-          type: 'string',
-          title: 'Button name',
-          description: 'Show all news -> /news',
-        },
-      ],
+      name: 'newsFeed',
+      title: 'News Feed',
+      validation: (Rule) => Rule.required(),
+      type: 'reference',
+      options: {
+        disableNew: true,
+      },
+      to: [{type: 'newsFeed'}],
     },
   ],
   preview: {
     select: {
-      title: 'title',
-      description: 'bottom.description',
-      button: 'bottom.button',
+      newsFeed: 'newsFeed',
     },
     prepare({title, description, button}) {
       return {
-        title: `News Feed | ${title}`,
-        subtitle: `${description} (${button})`,
+        title: `News Feed`,
+        subtitle: `on Main Page`,
         media: MdOutlineDynamicFeed,
       }
     },
