@@ -20,10 +20,9 @@ export default {
   ],
   preview: {
     select: {
-      type: 'type',
-      promo: 'promo',
+      resortWidget: 'resortWidget',
     },
-    prepare({type, promo}) {
+    prepare({resortWidget}) {
       return {
         title: `Resort Widget`,
         subtitle: `on Main Page`,

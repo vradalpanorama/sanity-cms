@@ -15,13 +15,13 @@ export default {
     {
       name: 'header',
       title: 'Header',
-      type: 'headerPage',
+      type: 'headerMainPage',
       validation: (Rule) => Rule.required(),
     },
     {
       name: 'content',
       title: 'Content',
-      type: 'contentPage',
+      type: 'contentMainPage',
       validation: (Rule) => Rule.required(),
     },
   ],
