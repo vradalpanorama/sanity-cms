@@ -24,10 +24,10 @@ export default {
       name: 'cover',
       title: 'cover',
       type: 'coverPage',
-      hidden: ({document}) => document.header?.typeHeaderPage !== 'cover',
+      hidden: ({parent}) => parent?.typeHeaderPage !== 'cover',
       validation: (Rule) =>
-        Rule.custom((coverValue, {document}) =>
-          document.header?.typeHeaderPage === 'cover' && coverValue === undefined
+        Rule.custom((coverValue, {parent}) =>
+          parent?.typeHeaderPage === 'cover' && coverValue === undefined
             ? 'You need to select the Cover!'
             : true,
         ),
@@ -36,12 +36,12 @@ export default {
       name: 'headerWithImage',
       title: 'Header with image',
       type: 'headerWithImagePage',
-      hidden: ({document}) => document.header?.typeHeaderPage !== 'headerWithImage',
+      hidden: ({parent}) => parent?.typeHeaderPage !== 'headerWithImage',
       validation: (Rule) =>
-        Rule.custom((headerValue, {document}) =>
-          document.header?.typeHeaderPage === 'headerWithImage' && headerValue === undefined
+        Rule.custom((headerValue, {parent}) =>
+          parent?.typeHeaderPage === 'headerWithImage' && headerValue === undefined
             ? 'You need to select the Header with image!'
-            : true,
+            : true, 
         ),
     },
   ],

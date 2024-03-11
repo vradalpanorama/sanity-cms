@@ -1,7 +1,6 @@
 import React from 'react'
 import SVG from 'react-inlinesvg'
 import {RiPagesLine} from 'react-icons/ri'
-// import {PagePreview} from './pagePreview'
 
 export default {
   name: 'page',
@@ -28,7 +27,6 @@ export default {
       validation: (Rule) => Rule.required(),
     },
   ],
-  // components: {preview: PagePreview},
   preview: {
     select: {
       title: 'settings.namePage.en',

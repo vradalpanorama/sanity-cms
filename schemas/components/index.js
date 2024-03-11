@@ -1,9 +1,9 @@
 import mainPage from './mainPage'
-import map from './map'
 import modal from './modal'
-import news from './news'
+import other from './other'
 import page from './page'
 import section from './section'
-import siteSettings from './siteSettings'
+import settings from './settings'
+import updates from './updates'
 
-export default [...mainPage, ...map, ...news, ...modal, ...page, ...section, ...siteSettings]
+export default [...mainPage, ...updates, ...other, ...modal, ...page, ...section, ...settings]

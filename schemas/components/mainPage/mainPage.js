@@ -9,7 +9,7 @@ export default {
     {
       name: 'settings',
       title: 'Settings',
-      type: 'settingsPage',
+      type: 'settingsMainPage',
       validation: (Rule) => Rule.required(),
     },
     {
@@ -25,18 +25,13 @@ export default {
       validation: (Rule) => Rule.required(),
     },
   ],
-  // components: {preview: PagePreview},
   preview: {
     select: {
-      title: 'settings.namePage.en',
-      isLandingPage: 'settings.pathname.isLandingPage',
-      sectionSlug: 'settings.pathname.section.slug.current',
-      sectionIcon: 'settings.pathname.section.icon',
-      slug: 'settings.pathname.slug.current',
+      title: 'settings.seoAndSocial.title.en',
     },
-    prepare({title, sectionSlug, slug, sectionIcon, isLandingPage}) {
+    prepare({title}) {
       return {
-        title: 'Main Page',
+        title: `Main Page | ${title}`,
       }
     },
   },

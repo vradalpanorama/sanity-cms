@@ -13,19 +13,22 @@ export default {
       title: 'Title',
       type: 'object',
       options: {
-        collapsible: true,
+        collapsible: false,
         collapsed: false,
+        columns: 2,
       },
       validation: (Rule) => Rule.required(),
       fields: [
         {
           name: 'en',
           title: 'EN',
+          validation: (Rule) => Rule.required(),
           type: 'string',
         },
         {
           name: 'no',
           title: 'NO',
+          validation: (Rule) => Rule.required(),
           type: 'string',
         },
       ],
@@ -35,28 +38,30 @@ export default {
       title: 'Lead',
       type: 'object',
       options: {
-        collapsible: true,
+        collapsible: false,
         collapsed: false,
+        columns: 2,
       },
       validation: (Rule) => Rule.required(),
       fields: [
         {
           name: 'en',
           title: 'EN',
+          validation: (Rule) => Rule.required(),
           type: 'string',
         },
         {
           name: 'no',
           title: 'NO',
+          validation: (Rule) => Rule.required(),
           type: 'string',
         },
-        // {
-        //   name: 'action',
-        //   type: 'reference',
-        //   title: 'Action',
-        //   validation: (Rule) => Rule.required(),
-        //   to: [{type: 'modal'}, {type: 'news'}],
-        // },
+        {
+          name: 'action',
+          type: 'reference',
+          title: 'Action',
+          to: [{type: 'modal'}, {type: 'news'}, {type: 'page'}, {type: 'externalLink'}],
+        },
       ],
     },
   ],
