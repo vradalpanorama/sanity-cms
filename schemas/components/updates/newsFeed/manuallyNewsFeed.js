@@ -31,9 +31,9 @@ export default {
       validation: (Rule) =>
         Rule.custom((list, {document}) => {
           if (document.typeFormation === 'manually' && document.activeTab === 'all') {
-            return list?.length === parseInt(document.numberOnNewsFeed)
+            return list?.length === parseInt(document.countPreview)
               ? true
-              : `The number of news should be ${document.numberOnNewsFeed} news`
+              : `The number of news should be ${document.countPreview} news`
           } else {
             return true
           }

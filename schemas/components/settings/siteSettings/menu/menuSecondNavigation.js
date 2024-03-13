@@ -3,5 +3,5 @@ export default {
   title: 'Second part Navigation',
   type: 'reference',
   validation: (Rule) => Rule.required(),
-  to: [{type: 'page'}, {type: 'section'}, {type: 'modal'}],
+  to: [{type: 'page'}, {type: 'section'}, {type: 'modal'}, {type: 'externalLink'}],
 }

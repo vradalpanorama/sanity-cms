@@ -59,7 +59,7 @@ export default {
       of: [
         {
           type: 'reference',
-          to: [{type: 'page'}, {type: 'modal'}],
+          to: [{type: 'page'}, {type: 'modal'}, {type: 'externalLink'}],
         },
       ],
     },

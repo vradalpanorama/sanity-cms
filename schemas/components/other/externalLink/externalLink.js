@@ -8,6 +8,22 @@ export default {
   icon: FiLink,
   fields: [
     {
+      name: 'linkURL',
+      title: 'Link URL',
+      type: 'url',
+      validation: (Rule) =>
+        Rule.required().uri({
+          scheme: ['http', 'https', 'mailto', 'tel'],
+        }),
+    },
+    {
+      name: 'openOnNewTab',
+      title: 'open on new Tab',
+      type: 'boolean',
+      validation: (Rule) => Rule.required(),
+      initialValue: false
+    },
+    {
       name: 'linkName',
       title: 'Link Name',
       type: 'object',
@@ -41,15 +57,7 @@ export default {
         },
       },
     },
-    {
-      name: 'linkURL',
-      title: 'Link URL',
-      type: 'url',
-      validation: (Rule) =>
-        Rule.required().uri({
-          scheme: ['http', 'https', 'mailto', 'tel'],
-        }),
-    },
+    
   ],
   preview: {
     select: {
