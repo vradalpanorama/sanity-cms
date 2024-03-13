@@ -20,6 +20,17 @@ export default {
         layout: 'radio',
       },
     },
+    // {
+    //   name: 'winterResortConditions',
+    //   type: 'array',
+    //   title: 'Winter Resort Conditions',
+    //   hidden: ({parent}) => parent?.type !== 'winter',
+    //   validation: (Rule) => Rule.custom((list, {parent}) => {
+    //     if (parent?.type === 'winter') {
+    //       return list.length < 3 ? 'Need 3 elemens or more' : true
+    //     }
+    //   }),
+    // },
     {
       name: 'maxWidth',
       title: 'Maximum width of the "Resort conditions" section',

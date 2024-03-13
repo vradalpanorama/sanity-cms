@@ -1,12 +1,12 @@
-import { MdAppSettingsAlt } from "react-icons/md";
+import {IoSettings} from 'react-icons/io5'
 import {BsWindowDesktop} from 'react-icons/bs'
 
 const settingsSidebar = (S) => [
   S.listItem()
     .title('Site Settings')
-    .icon(MdAppSettingsAlt)
+    .icon(IoSettings)
     .child(S.document().schemaType('siteSettings').documentId('siteSettings')),
-//   S.divider(),
+  //   S.divider(),
   S.listItem()
     .title('Resort Widget Settings')
     .icon(BsWindowDesktop)

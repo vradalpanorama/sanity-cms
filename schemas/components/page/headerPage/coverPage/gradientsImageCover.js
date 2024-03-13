@@ -13,6 +13,7 @@ export default {
   name: 'gradientsImageCover',
   title: 'Gradients',
   type: 'object',
+  validation: (Rule) => Rule.required(),
   options: {
     collapsible: true,
     collapsed: false,
@@ -28,6 +29,7 @@ export default {
         collapsible: false,
         collapsed: false,
       },
+      validation: (Rule) => Rule.required(),
       fields: [
         {
           name: 'startPoint',

@@ -12,7 +12,7 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: 'numberOnNewsFeed',
+      name: 'countPreview',
       title: 'The number of news in the feed',
       type: 'string',
       validation: (Rule) => Rule.required(),
@@ -63,7 +63,7 @@ export default {
   ],
   preview: {
     select: {
-      number: 'numberOnNewsFeed',
+      number: 'countPreview',
       tab: 'activeTab',
       typeFormation: 'typeFormation',
       expiresDate: 'manually.expiresDate',
